@@ -3,7 +3,7 @@ package messages
 import (
 	"sync"
 
-	"github.com/definenulls/go-ibft-main/messages/proto"
+	"github.com/definenulls/go-ibft/messages/proto"
 )
 
 // Messages contains the relevant messages for each view (height, round)

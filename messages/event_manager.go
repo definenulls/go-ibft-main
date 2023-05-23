@@ -7,7 +7,7 @@ import (
 
 	"github.com/google/uuid"
 
-	"github.com/definenulls/go-ibft-main/messages/proto"
+	"github.com/definenulls/go-ibft/messages/proto"
 )
 
 type eventManager struct {

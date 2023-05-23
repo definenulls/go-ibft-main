@@ -3,8 +3,8 @@ package core
 import (
 	"sync"
 
-	"github.com/definenulls/go-ibft-main/messages"
-	"github.com/definenulls/go-ibft-main/messages/proto"
+	"github.com/definenulls/go-ibft/messages"
+	"github.com/definenulls/go-ibft/messages/proto"
 )
 
 type stateType uint8

@@ -1,7 +1,7 @@
 package messages
 
 import (
-	"github.com/definenulls/go-ibft-main/messages/proto"
+	"github.com/definenulls/go-ibft/messages/proto"
 )
 
 type eventSubscription struct {
