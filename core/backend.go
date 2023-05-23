@@ -60,7 +60,6 @@ type Verifier interface {
 type Backend interface {
 	MessageConstructor
 	Verifier
-	ValidatorBackend
 
 	// BuildProposal builds a new proposal for the given view (height and round)
 	BuildProposal(view *proto.View) []byte
@@ -72,4 +71,8 @@ type Backend interface {
 
 	// ID returns the validator's ID
 	ID() []byte
+
+	// HasQuorum returns true if the quorum is reached
+	// for the specified height.
+	HasQuorum(height uint64, msgs []*proto.Message, msgType proto.MessageType) bool
 }

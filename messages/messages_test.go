@@ -391,6 +391,9 @@ func TestMessages_EventManager(t *testing.T) {
 	subscription := messages.Subscribe(SubscriptionDetails{
 		MessageType: messageType,
 		View:        baseView,
+		HasQuorumFn: func(_ uint64, messages []*proto.Message, _ proto.MessageType) bool {
+			return len(messages) >= numMessages
+		},
 	})
 
 	defer messages.Unsubscribe(subscription.ID)
@@ -399,7 +402,7 @@ func TestMessages_EventManager(t *testing.T) {
 	randomMessages := generateRandomMessages(numMessages, baseView, messageType)
 	for _, message := range randomMessages {
 		messages.AddMessage(message)
-		messages.SignalEvent(message.Type, message.View)
+		messages.SignalEvent(message)
 	}
 
 	// Wait for the subscription event to happen

@@ -3,7 +3,6 @@ package core
 import (
 	"context"
 	"fmt"
-	"math/big"
 	"sync"
 	"sync/atomic"
 	"time"
@@ -63,9 +62,7 @@ type buildRoundChangeMessageDelegate func(
 
 type insertProposalDelegate func(*proto.Proposal, []*messages.CommittedSeal)
 type idDelegate func() []byte
-type getVotingPowerDelegate func(uint64) (map[string]*big.Int, error)
-
-var _ Backend = &mockBackend{}
+type hasQuorumDelegate func(uint64, []*proto.Message, proto.MessageType) bool
 
 // mockBackend is the mock backend structure that is configurable
 type mockBackend struct {
@@ -82,7 +79,7 @@ type mockBackend struct {
 	buildRoundChangeMessageFn buildRoundChangeMessageDelegate
 	insertProposalFn          insertProposalDelegate
 	idFn                      idDelegate
-	getVotingPowerFn          getVotingPowerDelegate
+	hasQuorumFn               hasQuorumDelegate
 }
 
 func (m mockBackend) ID() []byte {
@@ -194,12 +191,12 @@ func (m mockBackend) BuildRoundChangeMessage(
 	}
 }
 
-func (m mockBackend) GetVotingPowers(height uint64) (map[string]*big.Int, error) {
-	if m.getVotingPowerFn != nil {
-		return m.getVotingPowerFn(height)
+func (m mockBackend) HasQuorum(height uint64, messages []*proto.Message, msgType proto.MessageType) bool {
+	if m.hasQuorumFn != nil {
+		return m.hasQuorumFn(height, messages, msgType)
 	}
 
-	return map[string]*big.Int{}, nil
+	return true
 }
 
 // Define delegation methods
@@ -247,7 +244,7 @@ func (l mockLogger) Error(msg string, args ...interface{}) {
 type mockMessages struct {
 	addMessageFn    func(message *proto.Message)
 	pruneByHeightFn func(height uint64)
-	signalEventFn   func(messageType proto.MessageType, messageView *proto.View)
+	signalEventFn   func(message *proto.Message)
 
 	getValidMessagesFn func(
 		view *proto.View,
@@ -303,9 +300,9 @@ func (m mockMessages) PruneByHeight(height uint64) {
 	}
 }
 
-func (m mockMessages) SignalEvent(msgType proto.MessageType, view *proto.View) {
+func (m mockMessages) SignalEvent(msg *proto.Message) {
 	if m.signalEventFn != nil {
-		m.signalEventFn(msgType, view)
+		m.signalEventFn(msg)
 	}
 }
 

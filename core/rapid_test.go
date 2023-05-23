@@ -236,7 +236,7 @@ func TestProperty(t *testing.T) {
 		// for the Backend, for all nodes
 		commonBackendCallback := func(backend *mockBackend, nodeIndex int) {
 			// Make sure the quorum function is Quorum optimal
-			backend.getVotingPowerFn = testCommonGetVotingPowertFn(nodes)
+			backend.hasQuorumFn = commonHasQuorumFn(setup.nodes)
 
 			// Make sure the node ID is properly relayed
 			backend.idFn = func() []byte {
