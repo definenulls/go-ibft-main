@@ -5,7 +5,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/0xPolygon/go-ibft/messages/proto"
+	"github.com/definenulls/go-ibft-main/messages/proto"
 )
 
 func TestMessages_ExtractCommittedSeals(t *testing.T) {

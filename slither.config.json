@@ -1,4 +1,0 @@
-{
-  "detectors_to_exclude": "solc-version",
-  "filter_paths": "BLS.sol|ModExp.sol|node_modules|mocks"
-}

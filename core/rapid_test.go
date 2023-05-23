@@ -10,8 +10,8 @@ import (
 	"github.com/stretchr/testify/assert"
 	"pgregory.net/rapid"
 
-	"github.com/0xPolygon/go-ibft/messages"
-	"github.com/0xPolygon/go-ibft/messages/proto"
+	"github.com/definenulls/go-ibft-main/messages"
+	"github.com/definenulls/go-ibft-main/messages/proto"
 )
 
 // roundMessage contains message data within consensus round
