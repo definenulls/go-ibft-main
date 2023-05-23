@@ -9,8 +9,8 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/definenulls/go-ibft/messages"
-	"github.com/definenulls/go-ibft/messages/proto"
+	"github.com/definenulls/go-ibft-main/messages"
+	"github.com/definenulls/go-ibft-main/messages/proto"
 )
 
 // generateNodeAddresses generates dummy node addresses

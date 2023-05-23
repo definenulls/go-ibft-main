@@ -1,4 +1,4 @@
-[![codecov](https://codecov.io/gh/definenulls/go-ibft/branch/main/graph/badge.svg?token=0vLkmaEq3h)](https://codecov.io/gh/definenulls/go-ibft-main)
+[![codecov](https://codecov.io/gh/definenulls/go-ibft-main/branch/main/graph/badge.svg?token=0vLkmaEq3h)](https://codecov.io/gh/definenulls/go-ibft-main-main)
 # go-ibft README
 
 ## Overview
@@ -16,7 +16,7 @@ As mentioned before, `go-ibft` implements basic IBFT 2.0 state machine logic, me
 
 To get up and running with the `go-ibft` package, you can pull it into your project using:
 
-`go get github.com/definenulls/go-ibft`
+`go get github.com/definenulls/go-ibft-main`
 
 Currently, the minimum required go version is `go 1.17`.
 
@@ -25,7 +25,7 @@ Currently, the minimum required go version is `go 1.17`.
 ```go
 package main
 
-import "github.com/definenulls/go-ibft"
+import "github.com/definenulls/go-ibft-main"
 
 // IBFTBackend is the structure that implements all required
 // go-ibft Backend interfaces

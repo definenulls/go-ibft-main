@@ -7,8 +7,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/definenulls/go-ibft/messages"
-	"github.com/definenulls/go-ibft/messages/proto"
+	"github.com/definenulls/go-ibft-main/messages"
+	"github.com/definenulls/go-ibft-main/messages/proto"
 )
 
 // Logger represents the logger behaviour

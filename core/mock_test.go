@@ -8,8 +8,8 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/definenulls/go-ibft/messages"
-	"github.com/definenulls/go-ibft/messages/proto"
+	"github.com/definenulls/go-ibft-main/messages"
+	"github.com/definenulls/go-ibft-main/messages/proto"
 )
 
 const (

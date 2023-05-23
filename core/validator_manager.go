@@ -6,7 +6,7 @@ import (
 	"math/big"
 	"sync"
 
-	"github.com/definenulls/go-ibft/messages/proto"
+	"github.com/definenulls/go-ibft-main/messages/proto"
 )
 
 var (

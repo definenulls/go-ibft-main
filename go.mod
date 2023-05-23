@@ -1,4 +1,4 @@
-module github.com/definenulls/go-ibft
+module github.com/definenulls/go-ibft-main
 
 go 1.19
 

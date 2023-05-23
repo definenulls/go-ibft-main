@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/definenulls/go-ibft/core"
+	"github.com/definenulls/go-ibft-main/core"
 )
 
 func main() {

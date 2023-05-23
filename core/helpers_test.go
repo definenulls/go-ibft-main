@@ -10,7 +10,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/definenulls/go-ibft/messages/proto"
+	"github.com/definenulls/go-ibft-main/messages/proto"
 )
 
 /*	HELPERS */
