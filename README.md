@@ -1,4 +1,4 @@
-[![codecov](https://codecov.io/gh/definenulls/go-ibft-main/branch/main/graph/badge.svg?token=0vLkmaEq3h)](https://codecov.io/gh/definenulls/go-ibft-main)
+[![codecov](https://codecov.io/gh/definenulls/go-ibft/branch/main/graph/badge.svg?token=0vLkmaEq3h)](https://codecov.io/gh/definenulls/go-ibft-main)
 # go-ibft README
 
 ## Overview
